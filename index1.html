@@ -994,103 +994,6 @@
 /* ─── PARALLAX HERO ─── */
 .hero-badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);padding:5px 13px;border-radius:100px;font-size:0.75rem;font-weight:600;letter-spacing:0.04em}
-
-/* ════════════════════════════════════════════════════════════
-   COMPREHENSIVE MOBILE FIX — appended last so it wins on cascade
-   ════════════════════════════════════════════════════════════ */
-html, body { overflow-x: hidden; max-width: 100%; }
-img { max-width: 100%; }
-
-@media (max-width: 760px) {
-  .container { padding: 0 16px; }
-  .section { padding: 56px 0; }
-
-  /* HERO */
-  .hero { padding: 24px 0 40px; }
-  .hero-title { font-size: 1.7rem !important; line-height: 1.25 !important; }
-  .hero-desc { font-size: 0.95rem; max-width: 100%; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .hero-actions .btn { width: 100%; justify-content: center; text-align: center; }
-  .hero-badge-row { gap: 6px; }
-  .hero-badge { font-size: 0.68rem; padding: 4px 10px; }
-  .trust-bar { gap: 10px 16px; }
-  .trust-item { font-size: 0.76rem; }
-
-  /* HERO CAROUSEL */
-  .carousel-wrap { margin-top: 20px; border-radius: 12px; }
-  .carousel-slide { height: 230px !important; }
-  .carousel-btn { width: 32px; height: 32px; font-size: 0.85rem; }
-  .carousel-prev { left: 8px; }
-  .carousel-next { right: 8px; }
-  .carousel-caption { padding: 16px 12px 10px; }
-  .carousel-caption h3 { font-size: 0.92rem; }
-  .carousel-caption p { font-size: 0.7rem; }
-
-  /* SEVA CAROUSEL */
-  .seva-carousel-wrap { margin-bottom: 32px; border-radius: 12px; }
-  .seva-carousel-slide { min-width: 100% !important; }
-  .seva-carousel-slide img { height: 200px; }
-
-  /* DONATE CARD */
-  .donate-card { padding: 20px; position: static !important; top: auto !important; }
-  .donate-card-title { font-size: 1.15rem; }
-  .amount-grid { gap: 6px; }
-  .amount-btn { padding: 10px 4px; font-size: 0.8rem; }
-  .freq-tabs { font-size: 0.78rem; }
-  .form-meta { flex-wrap: wrap; gap: 8px 14px; justify-content: center; }
-
-  /* STATS BAND */
-  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .stat-cell { padding: 22px 10px; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .stat-cell:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1) !important; }
-  .stat-num { font-size: 1.9rem !important; }
-
-  /* GRIDS — force single column on phones regardless of breakpoint above */
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; gap: 16px; }
-
-  /* CATEGORY FILTER TABS */
-  .cat-tabs-inner { gap: 6px; }
-  .cat-tab { padding: 6px 14px; font-size: 0.78rem; }
-
-  /* CAT CARDS */
-  .cat-card { padding: 18px; }
-  .cat-card-img { height: 130px; margin: -18px -18px 16px -18px; width: calc(100% + 36px); }
-
-  /* OCCASION BANNER */
-  .occasion-banner { padding: 22px; text-align: center; }
-  .occasion-banner h3 { font-size: 1.1rem; }
-
-  /* SLAB GRID */
-  .slab-grid { grid-template-columns: 1fr !important; }
-  .slab-grid .slab-card:last-child { grid-column: 1 !important; max-width: 100% !important; }
-
-  /* FAQ */
-  .faq-q { font-size: 0.9rem; padding: 14px 0; }
-
-  /* NAV */
-  .nav-logo-name { font-size: 1rem; }
-  .nav-inner { height: 58px; }
-
-  /* WHATSAPP / BACK TO TOP — don't overlap on small screens */
-  .wa-float { width: 46px; height: 46px; bottom: 20px; right: 16px; }
-  .wa-float svg { width: 24px; height: 24px; }
-  .back-to-top { width: 34px; height: 34px; bottom: 76px; right: 18px; }
-
-  /* SECTION HEADINGS */
-  h2 { font-size: 1.55rem !important; }
-
-  /* FOOTER */
-  .footer-grid { grid-template-columns: 1fr !important; gap: 28px; }
-  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-}
-
-@media (max-width: 420px) {
-  .hero-title { font-size: 1.5rem !important; }
-  .stats-grid { grid-template-columns: 1fr !important; }
-  .stat-cell, .stat-cell:nth-child(odd) { border-right: none !important; }
-  .carousel-slide { height: 190px !important; }
-  .seva-carousel-slide img { height: 170px; }
-}
 </style>
 </head>
 <body>
@@ -1971,7 +1874,7 @@ img { max-width: 100%; }
   function goSeva(i) {
     sevaIdx = i;
     var perPage = window.innerWidth <= 760 ? 1 : sevaVisible;
-    var pct = perPage === 1 ? (i * 100) : (i * perPage * 33.333);
+    var pct = perPage === 1 ? (i * 100) : (i * 100);
     document.getElementById('sevaCarousel').style.transform = 'translateX(-' + pct + '%)';
     document.querySelectorAll('#sevaDots .carousel-dot').forEach(function (d, j) {
       d.classList.toggle('active', j === i);
